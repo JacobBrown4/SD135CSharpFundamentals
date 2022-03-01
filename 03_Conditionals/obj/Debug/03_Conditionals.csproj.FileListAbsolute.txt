@@ -1,0 +1,15 @@
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\03_Conditionals\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\03_Conditionals\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\03_Conditionals\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\03_Conditionals\bin\Debug\Microsoft.TestPlatform.AdapterUtilities.dll
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\03_Conditionals\bin\Debug\03_Conditionals.dll
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\03_Conditionals\bin\Debug\03_Conditionals.pdb
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\03_Conditionals\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\03_Conditionals\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\03_Conditionals\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\03_Conditionals\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\03_Conditionals\obj\Debug\03_Conditionals.csproj.CoreCompileInputs.cache
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\03_Conditionals\obj\Debug\03_Conditionals.csproj.CopyComplete
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\03_Conditionals\obj\Debug\03_Conditionals.dll
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\03_Conditionals\obj\Debug\03_Conditionals.pdb
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\03_Conditionals\obj\Debug\03_Conditionals.csproj.AssemblyReference.cache
