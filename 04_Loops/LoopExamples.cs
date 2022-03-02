@@ -8,7 +8,7 @@ namespace _04_Loops
     {
         [TestMethod]
         public void WhileLoops()
-        {
+        { 
             int total = 1;
 
             // while(condition) Body

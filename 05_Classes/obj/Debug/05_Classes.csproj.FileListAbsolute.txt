@@ -1,0 +1,15 @@
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\05_Classes\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\05_Classes\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\05_Classes\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\05_Classes\bin\Debug\Microsoft.TestPlatform.AdapterUtilities.dll
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\05_Classes\bin\Debug\05_Classes.dll
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\05_Classes\bin\Debug\05_Classes.pdb
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\05_Classes\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\05_Classes\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\05_Classes\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\05_Classes\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\05_Classes\obj\Debug\05_Classes.csproj.AssemblyReference.cache
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\05_Classes\obj\Debug\05_Classes.csproj.CoreCompileInputs.cache
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\05_Classes\obj\Debug\05_Classes.csproj.CopyComplete
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\05_Classes\obj\Debug\05_Classes.dll
+C:\ElevenFiftyProjects\135SD\SD135CSharpFundamentals\05_Classes\obj\Debug\05_Classes.pdb
