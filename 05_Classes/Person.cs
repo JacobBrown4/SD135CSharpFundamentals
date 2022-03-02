@@ -60,7 +60,7 @@ namespace _05_Classes
 
         public void Brag()
         {
-            Console.WriteLine($"I'm {FirstName} I own a {Transport.Make} {Transport.Model} it's a {Transport.VehicleType}");
+            Console.WriteLine($"I'm {FirstName} I own a {Transport.Make} {Transport.Model} it's a {Transport.VehicleType} with {Transport.Mileage } miles on it");
         }
     }
 }

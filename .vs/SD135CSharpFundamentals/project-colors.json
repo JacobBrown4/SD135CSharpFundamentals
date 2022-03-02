@@ -25,7 +25,12 @@
       "ProjectGuid": "c6ccfdc4-1800-4ff2-be53-4824985231e0",
       "DisplayName": "04_Loops",
       "ColorIndex": 3
+    },
+    "76e489b1-3475-47b1-ae03-1210eed7e499": {
+      "ProjectGuid": "76e489b1-3475-47b1-ae03-1210eed7e499",
+      "DisplayName": "05_Classes",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 5
 }
