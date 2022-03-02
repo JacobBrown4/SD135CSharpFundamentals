@@ -16,7 +16,6 @@ namespace _05_Classes
             FirstName = firstName;
             LastName = lastName;
             DateOfBirth = dOB;
-
         }
 
 
