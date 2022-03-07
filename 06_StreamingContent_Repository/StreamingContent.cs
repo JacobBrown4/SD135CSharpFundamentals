@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _06_StreamingContent_Repository
 {
-    public enum GenreType { Horror = 1, Drama, Fantasy, Action, Comedy, SciFi, Romance, Bromance = 100 }
+    public enum GenreType { Horror = 1, Drama, Fantasy, Action, Comedy, SciFi, Romance, Bromance}
     public enum MaturityRating
     {
         G = 0,
