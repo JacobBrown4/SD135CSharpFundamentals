@@ -36,7 +36,7 @@ namespace _06_StreamingContent_Repository
         }
         public string Title { get; set; }
         public string Description { get; set; }
-        public double StarRating { get; set; }
+        public double StarRating { get; set; } // Out of 5
         public MaturityRating MaturityRating { get; set; }
         public bool IsFamilyFriendly
         {
