@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace _05_Classes
 {
     public enum VehicleType { Car, Truck, Van, Motorcycle, Spaceship, Plane, Boat }
+    public enum TirePosition { FD=1,FP,RD,RP}
 
     // Accessor types:
     // Public: availble throughout the full assembly
