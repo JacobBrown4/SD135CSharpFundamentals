@@ -13,6 +13,8 @@ namespace _06_StreamingContent_Console.UI
 
         public void Run()
         {
+            SeedContentList(); // Adding some movies before we even start
+            // Now do the program stuff
             RunMenu();
         }
 
@@ -43,16 +45,16 @@ namespace _06_StreamingContent_Console.UI
                         GetContentByTitle();
                         break;
                     case "3":
-                        // GetContententByMinimumStarRating();
+                        GetContententByMinimumStarRating();
                         break;
                     case "4":
                         AddContent();
                         break;
                     case "5":
-                        // UpdateContent();
+                        UpdateContent();
                         break;
                     case "6":
-                        // RemoveContent()
+                        RemoveContent();
                         break;
                     case "7":
                     case "e":
@@ -202,12 +204,164 @@ namespace _06_StreamingContent_Console.UI
             string ratingRaw = Console.ReadLine();
             double rating = double.Parse(ratingRaw);
             List<StreamingContent> listOfContent = _repo.GetByStarRatingByMinimum(rating);
-            foreach(StreamingContent content in listOfContent)
+            foreach (StreamingContent content in listOfContent)
             {
                 DisplayContent(content);
             }
             AnyKey();
         }
+
+        private void UpdateContent()
+        {
+            Console.Clear();
+            Console.Write("Please enter the title of \nthe movie you wish to update: ");
+            StreamingContent oldContent = _repo.GetContentByTitle(Console.ReadLine());
+            if (oldContent != null)
+            {
+                // Title
+                Console.Write("Please enter a title: ");
+                string titleInput = Console.ReadLine();
+                if (titleInput != "")
+                {
+                    oldContent.Title = titleInput;
+                }
+
+                // Description
+                Console.Write("Please enter a description: ");
+                string descInput = Console.ReadLine();
+                if (descInput != "")
+                {
+                    oldContent.Description = descInput;
+                }
+
+                // Stars
+                Console.Write("Please enter a star rating 0-5: ");
+                string starInput = Console.ReadLine();
+                if (starInput != "")
+                {
+                    oldContent.StarRating = double.Parse(starInput);
+                }
+
+                // Maturity Rating
+                Console.WriteLine("Select maturity rating:\n" +
+                "1.  G\n" +
+                "2.  PG\n" +
+                "3.  PG-13\n" +
+                "4.  R\n" +
+                "5.  NC 17\n" +
+                "6.  TV Y\n" +
+                "7.  TV G\n" +
+                "8.  TV PG\n" +
+                "9.  TV 14\n" +
+                "10. TV MA");
+                string maturityRating = Console.ReadLine();
+
+                if (maturityRating != "")
+                {
+
+                    switch (maturityRating)
+                    {
+                        case "1":
+                            oldContent.MaturityRating = MaturityRating.G;
+                            break;
+                        case "2":
+                            oldContent.MaturityRating = MaturityRating.PG;
+                            break;
+                        case "3":
+                            oldContent.MaturityRating = MaturityRating.PG13;
+                            break;
+                        case "4":
+                            oldContent.MaturityRating = MaturityRating.R;
+                            break;
+                        case "5":
+                            oldContent.MaturityRating = MaturityRating.NC_17;
+                            break;
+                        case "6":
+                            oldContent.MaturityRating = MaturityRating.TV_Y;
+                            break;
+                        case "7":
+                            oldContent.MaturityRating = MaturityRating.TV_G;
+                            break;
+                        case "8":
+                            oldContent.MaturityRating = MaturityRating.TV_PG;
+                            break;
+                        case "9":
+                            oldContent.MaturityRating = MaturityRating.TV_14;
+                            break;
+                        case "10":
+                            oldContent.MaturityRating = MaturityRating.TV_MA;
+                            break;
+                    }
+                }
+                // GenreType
+                //  public enum GenreType { Horror = 1, Drama, Fantasy, Action, Comedy, SciFi, Romance, Bromance}
+                Console.WriteLine("Select a Genre:\n" +
+                    "1. Horror\n" +
+                    "2. Drama\n" +
+                    "3. Fantasy\n" +
+                    "4. Action\n" +
+                    "5. Comedy\n" +
+                    "6. SciFi\n" +
+                    "7. Romance\n" +
+                    "8. Bromance");
+
+                string genreInput = Console.ReadLine();
+                if (genreInput != "")
+                {
+                    int genreId = int.Parse(genreInput);
+                    // Casting
+                    oldContent.GenreType = (GenreType)genreId;
+                }
+
+
+            }
+            else
+                Console.WriteLine("No content by that title found");
+            AnyKey();
+        }
+
+        private void RemoveContent()
+        {
+            Console.Clear();
+
+            List<StreamingContent> contentList = _repo.GetContents();
+            int count = 0;
+
+            foreach (StreamingContent content in contentList)
+            {
+                count++;
+                Console.WriteLine($"{count}. {content.Title}");
+            }
+            Console.Write("What content do you want to remove: ");
+            int targetId = int.Parse(Console.ReadLine());
+            int targetIndex = targetId - 1;
+            if (targetIndex >= 0 && targetIndex < contentList.Count())
+            {
+                StreamingContent desiredContent = contentList[targetIndex];
+
+                if (_repo.DeleteExistingContent(desiredContent))
+                {
+                    Console.WriteLine($"{desiredContent.Title} deleted successfully");
+                }
+                else
+                    Console.WriteLine("Something went wrong.");
+            }
+            else
+                Console.WriteLine("No content has that ID");
+
+            AnyKey();
+        }
+
+        private void SeedContentList()
+        {
+            StreamingContent toyStory = new StreamingContent("Toy Store", "Two plastic bros trauma bond", 5, MaturityRating.PG, GenreType.Bromance);
+            StreamingContent starWars = new StreamingContent("Star Wars", "Space samurai discover science", 4.3, MaturityRating.PG13, GenreType.SciFi);
+            StreamingContent dune = new StreamingContent("Dune", "Big ass worms and space coke", 5, MaturityRating.R, GenreType.SciFi);
+            _repo.AddContentToDirectory(toyStory);
+            _repo.AddContentToDirectory(starWars);
+            _repo.AddContentToDirectory(dune);
+        }
+
         private void DisplayContent(StreamingContent content)
         {
             Console.WriteLine($"Title: {content.Title}\n" +
