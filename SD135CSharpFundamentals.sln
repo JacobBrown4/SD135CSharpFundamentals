@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_StreamingContent_Console
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_StreamingContent_Repository", "06_StreamingContent_Repository\06_StreamingContent_Repository.csproj", "{822A6D56-6B4C-4A29-B47C-01E50F0D60B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_Inheritence", "07_Inheritence\07_Inheritence.csproj", "{39E61123-A67C-4FE1-B7D5-772C12537048}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{822A6D56-6B4C-4A29-B47C-01E50F0D60B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{822A6D56-6B4C-4A29-B47C-01E50F0D60B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{822A6D56-6B4C-4A29-B47C-01E50F0D60B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39E61123-A67C-4FE1-B7D5-772C12537048}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39E61123-A67C-4FE1-B7D5-772C12537048}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39E61123-A67C-4FE1-B7D5-772C12537048}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39E61123-A67C-4FE1-B7D5-772C12537048}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
