@@ -42,6 +42,14 @@ namespace _06_StreamingContent_Repository.Content
 
     public class Episode
     {
+        public Episode() { }
+        public Episode (string title, double runTime,int s,int e)
+        {
+            Title = title;
+            RunTime = runTime;
+            SeasonNumber = s;
+            EpisodeNumber = e;
+        }
         public string Title { get; set; }
         public double RunTime { get; set; }
         public int SeasonNumber { get; set; }

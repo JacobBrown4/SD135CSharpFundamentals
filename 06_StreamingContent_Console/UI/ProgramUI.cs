@@ -1,4 +1,5 @@
 ﻿using _06_StreamingContent_Repository;
+using _06_StreamingContent_Repository.Content;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace _06_StreamingContent_Console.UI
 {
     public class ProgramUI
     {
-        private readonly StreamingContentRepository _repo = new StreamingContentRepository();
+        private readonly ContentRepository _repo = new ContentRepository();
 
         public void Run()
         {
@@ -27,12 +28,14 @@ namespace _06_StreamingContent_Console.UI
 
                 Console.WriteLine("Enter the number of the option you would like:\n" +
                     "1. Show all content\n" +
-                    "2. Get content by title\n" +
-                    "3. Get content by minimum star rating\n" +
-                    "4. Add content to directory\n" +
-                    "5. Update content in directory\n" +
-                    "6. Remove content in directory\n" +
-                    "7. Exit");
+                    "2. Show all Movies\n" +
+                    "3. Show all Tv Shows\n" +
+                    "4. Get content by title\n" +
+                    "5. Get content by minimum star rating\n" +
+                    "6. Add content to directory\n" +
+                    "7. Update content in directory\n" +
+                    "8. Remove content in directory\n" +
+                    "9. Exit");
 
                 string userInput = Console.ReadLine();
                 switch (userInput)
@@ -42,22 +45,28 @@ namespace _06_StreamingContent_Console.UI
                         ShowAllContent();
                         break;
                     case "2":
-                        GetContentByTitle();
+                        ShowAllMovies();
                         break;
                     case "3":
-                        GetContententByMinimumStarRating();
+                        ShowAllShows();
                         break;
                     case "4":
-                        AddContent();
+                        GetContentByTitle();
                         break;
                     case "5":
-                        UpdateContent();
+                        GetContententByMinimumStarRating();
                         break;
                     case "6":
-                        RemoveContent();
+                        AddContent();
                         break;
                     case "7":
+                        UpdateContent();
+                        break;
+                    case "8":
+                        RemoveContent();
+                        break;
                     case "e":
+                    case "9":
                     case "exit":
                         continueToRun = false;
                         break;
@@ -164,7 +173,7 @@ namespace _06_StreamingContent_Console.UI
                 Console.ReadKey();
             }
         }
-
+        // Read
         private void ShowAllContent()
         {
             Console.Clear();
@@ -177,7 +186,28 @@ namespace _06_StreamingContent_Console.UI
 
             AnyKey();
         }
+        private void ShowAllMovies()
+        {
+            Console.Clear();
 
+            List<Movie> listOfContent = _repo.GetAllMovies();
+            foreach (Movie content in listOfContent)
+            {
+                DisplayContent(content);
+            }
+            AnyKey();
+        }
+        private void ShowAllShows()
+        {
+            Console.Clear();
+
+            List<Show> listOfContent = _repo.GetAllShows();
+            foreach (Show content in listOfContent)
+            {
+                DisplayContent(content);
+            }
+            AnyKey();
+        }
         private void GetContentByTitle()
         {
             Console.Clear();
@@ -210,7 +240,7 @@ namespace _06_StreamingContent_Console.UI
             }
             AnyKey();
         }
-
+        // Update
         private void UpdateContent()
         {
             Console.Clear();
@@ -319,7 +349,7 @@ namespace _06_StreamingContent_Console.UI
                 Console.WriteLine("No content by that title found");
             AnyKey();
         }
-
+        // Delete
         private void RemoveContent()
         {
             Console.Clear();
@@ -354,12 +384,21 @@ namespace _06_StreamingContent_Console.UI
 
         private void SeedContentList()
         {
-            StreamingContent toyStory = new StreamingContent("Toy Store", "Two plastic bros trauma bond", 5, MaturityRating.PG, GenreType.Bromance);
-            StreamingContent starWars = new StreamingContent("Star Wars", "Space samurai discover science", 4.3, MaturityRating.PG13, GenreType.SciFi);
-            StreamingContent dune = new StreamingContent("Dune", "Big ass worms and space coke", 5, MaturityRating.R, GenreType.SciFi);
+            Movie toyStory = new Movie("Toy Story", "Two plastic bros trauma bond", 5, MaturityRating.PG, GenreType.Bromance, 120, 1994);
+            Movie starWars = new Movie("Star Wars", "Space samurai discover science", 4.3, MaturityRating.PG13, GenreType.SciFi, 120, 1976);
+            Movie dune = new Movie("Dune", "Big ass worms and space coke", 5, MaturityRating.R, GenreType.SciFi, 175, 2021);
+
+            Episode episode1 = new Episode("The Gang Gets Racist", 22, 1, 1);
+            Episode episode2 = new Episode("Charlie has cancer", 22, 1, 2);
+            Episode episode3 = new Episode("Underage drinking a national problem", 22, 1, 3);
+            Episode episode4 = new Episode("The Gang does a thing", 22, 10, 1);
+
+            Show always = new Show("Always Sunny", "Four drunks yell at each other", 5, MaturityRating.TV_MA, GenreType.Comedy,15,new List<Episode>() { episode3,episode4,episode2,episode1});
+
             _repo.AddContentToDirectory(toyStory);
             _repo.AddContentToDirectory(starWars);
             _repo.AddContentToDirectory(dune);
+            _repo.AddContentToDirectory(always);
         }
 
         private void DisplayContent(StreamingContent content)
@@ -368,7 +407,23 @@ namespace _06_StreamingContent_Console.UI
                $"Description: {content.Description}\n" +
                $"Genre: {content.GenreType}\n" +
                $"Maturity Rating: {content.MaturityRating}\n" +
-               $"Star Rating: {content.StarRating} Stars\n");
+               $"Star Rating: {content.StarRating} Stars");
+            if (content is Movie)
+            {
+                Console.WriteLine($"Runtime {((Movie)content).RunTime}\n" +
+                    $"Year: {((Movie)content).Year}");
+            }
+            else if (content is Show)
+            {
+                Show show = content as Show;
+                Console.WriteLine($"Average Run Time: {show.AverageRunTime}\n" +
+                    $"Number of Season: {show.NumberOfSeasons}\n");
+                foreach (Episode ep in show.Episodes.OrderBy(s => s.SeasonNumber).ThenBy(e => e.EpisodeNumber))
+                {
+                    Console.WriteLine($"    {ep.SeasonNumber.ToString("00")}x{ep.EpisodeNumber.ToString("00")} {ep.Title}");
+                }
+            }
+            Console.WriteLine();
         }
         private void AnyKey()
         {
