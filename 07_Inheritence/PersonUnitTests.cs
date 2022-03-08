@@ -45,6 +45,7 @@ namespace _07_Inheritence
 
             HourlyEmployee stan = new HourlyEmployee("Stan", "Stanson", "7775551828", "Stan@Stancore", 223, new DateTime(2002, 12, 12), 233.2m, 10);
             persons.Add(stan);
+            stan.SetFirstName("Stanley");
         }
     }
 }
