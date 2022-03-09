@@ -49,12 +49,17 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Currency\Currency.cs" />
+    <Compile Include="Currency\ICurrency.cs" />
+    <Compile Include="Currency\Transaction.cs" />
     <Compile Include="Fruits\Banana.cs" />
     <Compile Include="Fruits\Grape.cs" />
     <Compile Include="Fruits\IFruit.cs" />
     <Compile Include="Fruits\Orange.cs" />
     <Compile Include="IFruitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ICurrencyTests.cs" />
+    <Compile Include="TransactionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
