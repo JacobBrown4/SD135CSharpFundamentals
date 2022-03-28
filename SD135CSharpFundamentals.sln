@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_Interfaces", "08_Interfa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_APIs", "09_APIs\09_APIs.csproj", "{0B2C0B27-391E-49D8-A3BE-AC46C28D8011}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10_Async", "10_Async\10_Async.csproj", "{6F458AD8-BFB1-40B7-A7ED-1008B13A735D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{0B2C0B27-391E-49D8-A3BE-AC46C28D8011}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B2C0B27-391E-49D8-A3BE-AC46C28D8011}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B2C0B27-391E-49D8-A3BE-AC46C28D8011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F458AD8-BFB1-40B7-A7ED-1008B13A735D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F458AD8-BFB1-40B7-A7ED-1008B13A735D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F458AD8-BFB1-40B7-A7ED-1008B13A735D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F458AD8-BFB1-40B7-A7ED-1008B13A735D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
