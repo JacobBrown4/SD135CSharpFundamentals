@@ -12,5 +12,7 @@ namespace _11_RestaurantRater.Models
 
         public DbSet<Restaurant> Restaurants { get; set; }
 
+        public DbSet<Rating> Ratings { get; set; }
+
     }
 }

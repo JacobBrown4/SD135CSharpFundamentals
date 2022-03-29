@@ -62,7 +62,6 @@ namespace _11_RestaurantRater.Controllers
                 {
                     restaurant.Name = model.Name;
                     restaurant.Address = model.Address;
-                    restaurant.Rating = model.Rating;
 
                     await _context.SaveChangesAsync();
 
