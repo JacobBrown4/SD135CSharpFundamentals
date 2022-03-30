@@ -24,7 +24,7 @@ namespace _12_GeneralStore.Models
 
         [Required]
         public int Quantity { get; set; }
-        [Required]
+
         [DataType(DataType.DateTime)]
         public DateTime DateOfTransaction { get; set; }
 

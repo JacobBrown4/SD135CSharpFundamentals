@@ -47,5 +47,38 @@ namespace _12_GeneralStore.Controllers
 
             return NotFound();
         }
+
+        // U
+        [HttpPut]
+        public async Task<IHttpActionResult> UpdateCustomer([FromUri] int id, [FromBody] Customer updatedCustomer)
+        {
+            if (ModelState.IsValid)
+            {
+                var customer = await _context.Customers.FindAsync(id);
+
+                if(customer != null)
+                {
+                    customer.FirstName = updatedCustomer.FirstName;
+                    customer.LastName = updatedCustomer.LastName;
+                    await _context.SaveChangesAsync();
+                    return Ok();
+                }
+                return NotFound();
+            }
+            return BadRequest(ModelState);
+        }
+        // D
+        [HttpDelete]
+        public async Task<IHttpActionResult> DeleteCustomerByIdAsync([FromUri] int id)
+        {
+            var customer = await _context.Customers.FindAsync(id);
+            if (customer == null)
+                return NotFound();
+
+            _context.Customers.Remove(customer);
+
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
     }
 }

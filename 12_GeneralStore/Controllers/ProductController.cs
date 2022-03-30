@@ -47,5 +47,45 @@ namespace _12_GeneralStore.Controllers
 
             return NotFound();
         }
+
+        // U
+        [HttpPut]
+        public async Task<IHttpActionResult> UpdateProductAsync([FromUri] int id, [FromBody] Product updatedProduct)
+        {
+            if (ModelState.IsValid)
+            {
+                var product = await _context.Products.FindAsync(id);
+
+                if(product != null)
+                {
+
+                    product.ProductName = updatedProduct.ProductName;
+                    product.UPC = updatedProduct.UPC;
+                    product.Quantity = updatedProduct.Quantity;
+                    product.Price = updatedProduct.Price;
+
+                    await _context.SaveChangesAsync();
+                    return Ok("Product updated");
+
+                }
+                return NotFound();
+
+            }
+            return BadRequest(ModelState);
+        }
+
+        // D
+
+        [HttpDelete]
+        public async Task<IHttpActionResult> DeleteProductAsync([FromUri] int id)
+        {
+            var product = await _context.Products.FindAsync(id);
+            if (product == null)
+               return NotFound();
+
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
+            return Ok($"Product {product.ProductName} deleted.");
+        }
     }
 }
