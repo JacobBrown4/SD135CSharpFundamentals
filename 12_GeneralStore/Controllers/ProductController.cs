@@ -13,6 +13,9 @@ namespace _12_GeneralStore.Controllers
     public class ProductController : ApiController
     {
         private readonly ApplicationDbContext _context = new ApplicationDbContext();
+
+
+
         // C
         [HttpPost]
         public async Task<IHttpActionResult> PostProductAsync(Product model)
